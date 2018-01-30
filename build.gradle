@@ -1,20 +1,5 @@
-buildscript {
-	ext {
-		springBootVersion = '1.5.9.RELEASE'
-	}
-	repositories {
-		mavenLocal()
-		maven { url "http://nexus.chachazhan.com/content/groups/public" }
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
-}
-
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
 
 group = 'com.chachazhan'
 version = '0.0.1-SNAPSHOT'
@@ -28,9 +13,7 @@ repositories {
 }
 
 dependencies {
+	compile 'de.codecentric:spring-boot-admin-client:1.5.7'
 	compile 'de.codecentric:spring-boot-admin-server:1.5.7'
 	compile 'de.codecentric:spring-boot-admin-server-ui:1.5.7'
-
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
