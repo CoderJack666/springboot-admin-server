@@ -1,0 +1,8 @@
+FROM openjdk:8-jre-alpine
+MAINTAINER Jack Du <dujiaxi@chachazhan.com>
+
+COPY home/gradle/server.jar /etc/server.jar
+
+ENV JAVA_TOOL_OPTIONS -Duser.timezone=Asia/Shanghai -Xmx512m
+
+CMD ["java", "-jar", "/etc/server.jar"]
